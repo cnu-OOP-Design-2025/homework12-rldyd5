@@ -23,7 +23,7 @@ public:
     ~Logger() {
         logFile << "[Shutdown] Logger closed." << endl;
     }
-    static Logger* getInstance(const std::string& filename = "Test\\output2.txt") {
+    static Logger* getInstance(const std::string& filename = "Test/output2.txt") {
         lock_guard<mutex> lock(init_mtx);
         if (!instance)
             instance.reset(new Logger(filename));
